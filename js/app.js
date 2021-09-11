@@ -68,7 +68,7 @@ function game() {
 			scissorsRegex.test(computerChoice)
 		) {
 			computerScore++;
-			return "You lost! Scissors beats paper.";
+			return "You lost! Scissors beat paper.";
 		} else if (
 			scissorsRegex.test(playerChoice) &&
 			rockRegex.test(computerChoice)
@@ -80,13 +80,13 @@ function game() {
 			paperRegex.test(computerChoice)
 		) {
 			playerScore++;
-			return "You win! Scissors beats paper.";
+			return "You win! Scissors beat paper.";
 		} else {
 			return "It's a tie!";
 		}
 	}
 
-	// Play the round until someone's score reaches 5 points.
+	// Play the rounds until someone's score reaches 5 points.
 
 	while (playerScore < 5 && computerScore < 5) {
 		const playerChoice = playerPlay();
