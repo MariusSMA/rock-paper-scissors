@@ -1,82 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="shortcut icon"
-			href="./images/fav-icon.ico"
-			type="image/x-icon"
-		/>
-		<link rel="stylesheet" href="./css/style.css" />
-		<title>Sword Bow Wand</title>
-	</head>
-	<body>
-		<header>
-			<div class="container">
-				<h1 class="title">
-					<span class="sword-text">Sword</span>
-					<span class="bow-text">Bow</span>
-					<span class="wand-text">Wand</span>
-				</h1>
-				<p class="game-description">
-					<span class="game-info">
-						<span class="sword-text">Sword</span> beats
-						<span class="wand-text">Wand</span> <span class="pipe">|</span>
-					</span>
-					<span class="game-info">
-						<span class="bow-text">Bow</span> beats
-						<span class="sword-text">Sword</span> <span class="pipe">|</span>
-					</span>
-					<span class="game-info">
-						<span class="wand-text">Wand</span> beats
-						<span class="bow-text">Bow</span>
-					</span>
-				</p>
-			</div>
-		</header>
-		<main>
-			<div class="container">
-				<div class="cards">
-					<button class="card sword-card">
-						<img class="icon" src="./images/sword.png" alt="Sword icon" />
-					</button>
-					<button class="card bow-card">
-						<img class="icon" src="./images/bow.png" alt="Bow icon" />
-					</button>
-					<button class="card wand-card">
-						<img class="icon" src="./images/wand.png" alt="Wand icon" />
-					</button>
-				</div>
-				<h2 class="game-result"></h2>
-				<button class="play-again">Play again</button>
-				<div class="enemy-card">
-					<div class="enemy-card-header">
-						<h2 class="enemy-card-title">Enemy's weapon</h2>
-						<div class="enemy-choice">None</div>
-					</div>
-					<hr />
-					<div class="enemy-card-body">
-						<p class="game-rounds">
-							Round: <span class="game-rounds-number">0</span>
-						</p>
-						<p class="game-lives">
-							Your lives:
-							<span class="your-lives">5</span>
-							| Enemy's lives:
-							<span class="enemy-lives">5</span>
-						</p>
-						<p class="round-result"></p>
-					</div>
-				</div>
-			</div>
-		</main>
-		<footer>
-			<div class="container">
-				<p class="footer-text">Crafted by Marius S.</p>
-			</div>
-		</footer>
-		<script src="js/main.js"></script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A RPS game from TOP (The Odin Project) curriculum."
+    />
+    <link
+      rel="shortcut icon"
+      href="./images/fav-icon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Sword Bow Wand</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="title">
+          <span class="sword-text">Sword</span>
+          <span class="bow-text">Bow</span>
+          <span class="wand-text">Wand</span>
+        </h1>
+        <p class="game-description">
+          <span class="game-info">
+            <span class="sword-text">Sword</span> beats
+            <span class="wand-text">Wand</span> <span class="pipe">|</span>
+          </span>
+          <span class="game-info">
+            <span class="bow-text">Bow</span> beats
+            <span class="sword-text">Sword</span> <span class="pipe">|</span>
+          </span>
+          <span class="game-info">
+            <span class="wand-text">Wand</span> beats
+            <span class="bow-text">Bow</span>
+          </span>
+        </p>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="cards">
+          <button class="card sword-card">
+            <img
+              class="icon"
+              src="./images/sword.png"
+              alt="Sword icon"
+              width="512"
+              height="512"
+            />
+          </button>
+          <button class="card bow-card">
+            <img
+              class="icon"
+              src="./images/bow.png"
+              alt="Bow icon"
+              width="512"
+              height="512"
+            />
+          </button>
+          <button class="card wand-card">
+            <img
+              class="icon"
+              src="./images/wand.png"
+              alt="Wand icon"
+              width="512"
+              height="512"
+            />
+          </button>
+        </div>
+        <h2 class="game-result"></h2>
+        <button class="play-again">Play again</button>
+        <div class="enemy-card">
+          <div class="enemy-card-header">
+            <h2 class="enemy-card-title">Enemy's weapon</h2>
+            <div class="enemy-choice">None</div>
+          </div>
+          <hr />
+          <div class="enemy-card-body">
+            <p class="game-rounds">
+              Round: <span class="game-rounds-number">0</span>
+            </p>
+            <p class="game-lives">
+              Your lives:
+              <span class="your-lives">5</span>
+              | Enemy's lives:
+              <span class="enemy-lives">5</span>
+            </p>
+            <p class="round-result"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p class="footer-text">Crafted by Marius S.</p>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
 </html>
