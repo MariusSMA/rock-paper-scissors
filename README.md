@@ -1,1 +1,1 @@
-# rock-paper-scissors
+# Sword Bow Wand
