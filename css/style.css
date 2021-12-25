@@ -85,6 +85,15 @@ main {
   transform: translateY(-0.5rem);
 }
 
+.disabled-btn {
+  opacity: 0.35;
+  cursor: initial;
+}
+
+.disabled-btn:hover {
+  transform: initial;
+}
+
 .bow-card {
   background-color: #ffd4c9;
 }

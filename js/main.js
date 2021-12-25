@@ -1,13 +1,10 @@
 const weapons = document.querySelectorAll(".card");
-const playBtn = document.querySelector(".play-again");
-
 const WEAPONS = ["sword", "bow", "wand"];
 
 let roundCounter = 0;
 let playerLives = 5;
 let computerLives = 5;
 
-playBtn.addEventListener("click", () => location.reload());
 weapons.forEach((weapon, i) => {
   weapon.addEventListener("click", () => playRound(WEAPONS[i], computerPlay()));
 });
@@ -23,8 +20,37 @@ const playRound = (player, computer) => {
   const gameResult = document.querySelector(".game-result");
 
   rounds.textContent = `${++roundCounter}`;
-  addEnemyWeaponImg(computer, enemyIcon);
+  enemyIcon.innerHTML = addEnemyWeaponImg(computer);
   checkWeapons(player, computer, yourLives, enemyLives, roundResult);
+  setGameResult(playerLives, computerLives, gameResult);
+};
+
+const addEnemyWeaponImg = (compChoice) =>
+  `<img src="./images/${compChoice}.png" class="icon" width="192" height="192" alt="${compChoice} icon" />`;
+
+const checkWeapons = (player, computer, yourLives, enemyLives, roundResult) => {
+  if (
+    (player === "sword" && computer === "bow") ||
+    (player === "bow" && computer === "wand") ||
+    (player === "wand" && computer === "sword")
+  ) {
+    yourLives.textContent = --playerLives;
+    roundResult.textContent = `You lost! The ${computer} beats the ${player}.`;
+  } else if (
+    (player === "sword" && computer === "wand") ||
+    (player === "bow" && computer === "sword") ||
+    (player === "wand" && computer === "bow")
+  ) {
+    enemyLives.textContent = --computerLives;
+    roundResult.textContent = `You won! The ${player} beats the ${computer}.`;
+  } else {
+    roundResult.textContent = "It's a draw!";
+  }
+};
+
+const setGameResult = (playerLives, computerLives, gameResult) => {
+  const playBtn = document.querySelector(".play-again");
+  playBtn.addEventListener("click", () => location.reload());
 
   if (!playerLives) gameResult.textContent = "You lost the battle!";
   if (!computerLives) gameResult.textContent = "You won the battle!";
@@ -32,43 +58,7 @@ const playRound = (player, computer) => {
     playBtn.style.display = "block";
     weapons.forEach((weapon) => {
       weapon.setAttribute("disabled", "");
-      weapon.style.opacity = "0.35";
-      weapon.style.cursor = "initial";
-      weapon.style.transform = "none";
+      weapon.classList.add("disabled-btn");
     });
-  }
-};
-
-const addEnemyWeaponImg = (compChoice, enemyIcon) => {
-  if (compChoice === "sword") {
-    enemyIcon.innerHTML = `<img class="icon" src="../images/sword.png" alt="Sword icon" />`;
-  } else if (compChoice === "bow") {
-    enemyIcon.innerHTML = `<img class="icon" src="../images/bow.png" alt="Bow icon" />`;
-  } else {
-    enemyIcon.innerHTML = `<img class="icon" src="../images/wand.png" alt="Wand icon" />`;
-  }
-};
-
-const checkWeapons = (player, computer, yourLives, enemyLives, roundResult) => {
-  if (player === "sword" && computer === "bow") {
-    yourLives.textContent = --playerLives;
-    roundResult.textContent = "You lost! Bow beats Sword.";
-  } else if (player === "sword" && computer === "wand") {
-    enemyLives.textContent = --computerLives;
-    roundResult.textContent = "You won! Sword beats Wand.";
-  } else if (player === "bow" && computer === "sword") {
-    enemyLives.textContent = --computerLives;
-    roundResult.textContent = "You won! Bow beats Sword.";
-  } else if (player === "bow" && computer === "wand") {
-    yourLives.textContent = --playerLives;
-    roundResult.textContent = "You lost! Wand beats Bow.";
-  } else if (player === "wand" && computer === "sword") {
-    yourLives.textContent = --playerLives;
-    roundResult.textContent = "You lost! Sword beats Wand.";
-  } else if (player === "wand" && computer === "bow") {
-    enemyLives.textContent = --computerLives;
-    roundResult.textContent = "You won! Wand beats Bow.";
-  } else {
-    roundResult.textContent = "It's a draw!";
   }
 };
