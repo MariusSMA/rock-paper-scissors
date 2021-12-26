@@ -72,8 +72,8 @@ main {
 .card {
   display: grid;
   place-content: center;
-  width: 110px;
-  height: 100px;
+  width: 6.875rem;
+  height: 6.25rem;
   background-color: #fff4d7;
   border: none;
   border-radius: 1rem;
@@ -128,11 +128,11 @@ main {
 
 .enemy-card {
   font-size: 1.25rem;
-  max-width: 450px;
+  max-width: 28.125rem;
   margin: 0 auto 2rem;
   background-color: #322e2e;
   border-radius: 1rem;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
 }
 
 .enemy-card-header {
@@ -140,14 +140,15 @@ main {
 }
 
 .enemy-card-title {
+  font-size: 1.5rem;
   padding: 1rem 0;
 }
 
 .enemy-choice {
   display: grid;
   place-content: center;
-  width: 110px;
-  height: 100px;
+  width: 6.875rem;
+  height: 6.25rem;
   font-size: 1.5rem;
   margin: 0 auto;
   background-color: #fff4d7;
@@ -165,14 +166,29 @@ main {
 }
 
 footer {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text-link {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Small Mobile Layout */
 
 @media (max-width: 22.5rem) {
+  .title {
+    font-size: 2rem;
+    padding: 1rem 0;
+  }
+
+  .game-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
   .card {
-    height: 80px;
+    height: 5rem;
   }
 
   .icon {
@@ -202,8 +218,8 @@ footer {
   }
 
   .card {
-    width: 165px;
-    height: 150px;
+    width: 10.3125rem;
+    height: 9.375rem;
   }
 
   .icon {
@@ -227,8 +243,8 @@ footer {
 
   .enemy-choice {
     font-size: 2rem;
-    width: 165px;
-    height: 150px;
+    width: 10.3125rem;
+    height: 9.375rem;
   }
 
   hr {
